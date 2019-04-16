@@ -1,0 +1,32 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.divLogReg {
+  padding-top: 2%;
+  margin: auto;
+  width: 90%;
+  height: 470px;
+  background-color: #f9f9f9;
+}
+
+
+.header{
+  width: 100%;
+  height: 50px;
+
+}
+.header p{
+  float: left;
+  margin-left: 5%;
+  font-size: 20px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: black;
+}
+
+.header img{
+  width: 40px;
+  height: 40px;
+}
+
+/* Test*/

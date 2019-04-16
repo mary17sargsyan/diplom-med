@@ -6,19 +6,12 @@ export class TopHeader extends React.Component {
         super(props);
         this.state = {
             links: [{
-                title: 'Home',
-                url: '/'
-            },{
                 title:'Register',
                 url: '/register'
             },{
                 title:'Login',
-                url: '/login'
-            }, {
-                    title:'Index',
-                    url: '/user'
+                url: '/'
             }]
-
 
         }
     }
@@ -28,7 +21,9 @@ export class TopHeader extends React.Component {
                 {
                     this.state.links.map((link, index) => {
                         return (
-                            <Link key={index} to={link.url}>{link.title} &nbsp;</Link>
+                            <Link key={index} to={link.url}>{link.title} &nbsp; </Link>
+
+
                         )
                     })
                 }

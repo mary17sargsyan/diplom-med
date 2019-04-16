@@ -1,0 +1,19 @@
+nav{
+    width: 30%;
+    height: 50px;
+    float: right;
+}
+a{
+    padding-right: 3%;
+    float: right;
+    margin-left: 1%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 23px;
+}
+
+a:hover{
+    color: #2ed3ae;
+}
+
