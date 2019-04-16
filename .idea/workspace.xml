@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21b08477-c6e7-4eaf-b088-9a6e6da921df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/home/home.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/home/login/login.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/home/style.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/firstPage/App.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/firstPage/firstPage.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/firstPage/login/login.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/firstPage/shared/news-letter.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/logo.svg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/firstPage/header/header-component.js" afterPath="$PROJECT_DIR$/src/home/header/header-component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/firstPage/header/style.css" afterPath="$PROJECT_DIR$/src/home/header/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/firstPage/home/home.component.js" afterPath="$PROJECT_DIR$/src/home/delete/home.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/firstPage/home/styleHome.css" afterPath="$PROJECT_DIR$/src/home/delete/styleHome.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/firstPage/login/loginStyle.css" afterPath="$PROJECT_DIR$/src/home/login/loginStyle.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/firstPage/register/regStyle.css" afterPath="$PROJECT_DIR$/src/home/register/regStyle.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/firstPage/register/register.component.js" afterPath="$PROJECT_DIR$/src/home/register/register.component.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/firstPage/shared/style.css" afterPath="$PROJECT_DIR$/src/home/shared/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/firstPage/shared/top-header.component.js" afterPath="$PROJECT_DIR$/src/home/shared/top-header.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/debug.log" afterPath="$PROJECT_DIR$/debug.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -183,7 +163,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -290,15 +270,15 @@
       <workItem from="1554717478012" duration="14650000" />
       <workItem from="1554924000981" duration="9124000" />
       <workItem from="1555056372643" duration="10675000" />
-      <workItem from="1555397104169" duration="3781000" />
+      <workItem from="1555397104169" duration="4333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44131000" />
+    <option name="totallyTimeSpent" value="44683000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="20" width="1346" height="688" extended-state="1" />
+    <frame x="10" y="20" width="1346" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27216175" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
