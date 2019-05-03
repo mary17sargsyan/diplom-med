@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import  {Home} from "./home/home.component";
 
+
+import  {Index} from "./user/index.component";
 
 class App extends Component {
   render() {
     return (
-        <Home/>
+        <div>
+
+
+      <Index/>
+
+        </div>
 
     );
   }

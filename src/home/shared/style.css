@@ -1,19 +1,23 @@
 nav{
-    width: 30%;
-    height: 50px;
-    float: right;
+    width: 100%;
+    background-color: #2ed3ae;
+    height: 60px;
 }
+
 a{
-    padding-right: 3%;
+
+    margin-left: 1.5%;
+    width: 12%;
     float: right;
-    margin-left: 1%;
+    height: 30px;
+    padding: 18px;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 23px;
-}
+    border-right: 3px solid white;
 
+}
 a:hover{
-    color: #2ed3ae;
+    color: #f9f9f9;
 }
-

@@ -8,7 +8,7 @@ body{
 }
 
 .formDiv1{
-    margin-left: 10%;
+    margin-left: 15%;
     width: 35%;
     float: left;
 }
@@ -18,35 +18,38 @@ body{
     width: 35%;
     float: left;
 }
+label{
+    float: left;
+}
 .weightHeight{
     width: 100%;
 }
 
-form{
-    width: 90%;
-}
-select{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #2ed3ae;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: white;
-    color: #2ed3ae;
-    font-size: 20px;
-}
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+                form{
+                    width: 90%;
+                }
+                select{
+                    width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #2ed3ae;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    background-color: white;
+                    color: #2ed3ae;
+                    font-size: 20px;
+                }
+                input[type=text] {
+                    width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
 
-}
+                }
 
 input[type=number] {
     float: left;

@@ -5,50 +5,81 @@ import {TopHeader} from '../shared/top-header.component';
 
 export class Register extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             firstName: '',
-            lastName: ' ',
-            eMail: ' ',
+            lastName: '',
+            eMail: '',
             passwordRepeat: '',
-            password: ' '
+            password: ''
         };
 
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
         this.handleChangeLastName = this.handleChangeLastName.bind(this);
         this.handleChangeMail = this.handleChangeMail.bind(this);
-        this.handleChangePassword= this.handleChangePassword.bind(this);
-        this.handleChangePasswordRepeat= this.handleChangePasswordRepeat.bind(this);
+        this.handleChangePassword = this.handleChangePassword.bind(this);
+        this.handleChangePasswordRepeat = this.handleChangePasswordRepeat.bind(this);
+        this.handleChangeDate = this.handleChangeDate.bind(this);
+        this.handleChangeSelectGender = this.handleChangeSelectGender.bind(this);
+        this.handleChangeWeight = this.handleChangeWeight.bind(this);
+        this.handleChangeHeight = this.handleChangeHeight.bind(this);
+        this.handleChangeAbout = this.handleChangeAbout.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChangeFirstName(event){
+    handleChangeFirstName(event) {
         this.setState({firstName: event.target.value});
     }
-    handleChangeLastName(event){
+
+    handleChangeLastName(event) {
         this.setState({lastName: event.target.value});
     }
-    handleChangePassword(event){
+
+    handleChangePassword(event) {
         this.setState({password: event.target.value});
     }
-    handleChangePasswordRepeat(event){
+
+    handleChangePasswordRepeat(event) {
         this.setState({passwordRepeat: event.target.value});
     }
+
     handleChangeMail(event) {
         this.setState({eMail: event.target.value});
+    }
+    handleChangeDate(event) {
+        this.setState({date: event.target.value});
+    }
+    handleChangeSelectGender(event) {
+        this.setState({selectGender: event.target.value});
+    }
+    handleChangeWeight(event) {
+        this.setState({weight: event.target.value});
+    }
+    handleChangeHeight(event) {
+        this.setState({height: event.target.value});
+    }
+    handleChangeAbout(event) {
+        this.setState({about: event.target.value});
     }
 
     handleSubmit(event) {
         console.log('lastName: ' + this.state.lastName);
         console.log('firstName: ' + this.state.firstName);
         console.log('eMail: ' + this.state.eMail);
-        console.log('password: ' + this.state.password);
-        console.log('passwordRepeat: ' + this.state.passwordRepeat);
+        console.log('password:' +this.state.password);
+        console.log('passwordRepeat:' + this.state.passwordRepeat);
+        console.log('date: ' + this.state.date);
+        console.log('gender: ' + this.state.selectGender);
+        console.log('weight: ' + this.state.weight);
+        console.log('height: ' + this.state.height);
+        console.log('about: ' + this.state.about);
+
 
         event.preventDefault();
     }
-    render(){
+
+    render() {
 
         return (
             <div>
@@ -93,7 +124,41 @@ export class Register extends Component {
 
                         </div>
                         <div className="formDiv2">
+                            <label>
+                                Date of Birth :
+                            </label>
+                            <br/>
+                            <input name="date" type="date" min="1930-01-01" max="2010-01-01" value={this.state.date}
+                                   onChange={this.handleChangeDate}/>
+                            <label>
+                                Gender :
+                            </label>
+                            <select name="selectGender" value={this.state.selectGender} onChange={this.handleChangeSelectGender}>
+                                <option value="Male">Male</option>
+                                <option value="Female">Fimale</option>
+    <br/>
+                            </select>
 
+                            <label>
+                                Your weight and height :
+                            </label>
+                            <div className="wightHeight">
+                                <input name="weight" type="number" placeholder="Height" value={this.state.weight}
+                                       onChange={this.handleChangeWeight}/>
+                                <input name="height" type="number" placeholder="Weight" value={this.state.height}
+                                       onChange={this.handleChangeHeight}/>
+                            </div>
+                            <br/>
+                            <label>
+                                What's your goal ? :
+                            </label>
+                            <select name="about" value={this.state.about} onChange={this.handleChangeAbout}>
+                                <option value="beHealthier">Be Healthier</option>
+                                <option value="loseWeight ">Lose Weight</option>
+                                <option value="gainWeight">Gain Weight</option>
+
+                            </select>
+                            <br/>
 
                             <input type="submit" value="Submit"/>
                         </div>

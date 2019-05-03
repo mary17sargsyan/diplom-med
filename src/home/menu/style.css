@@ -1,0 +1,12 @@
+.grayBack{
+    margin: auto;
+    width: 90%;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    min-height: 500px;
+    height: auto;
+
+    padding-top: 5%;
+
+}
+

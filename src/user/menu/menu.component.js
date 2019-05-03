@@ -18,9 +18,9 @@ export class Menu extends Component {
                     <br/>
                     <div >
 
-                        <Route exact path="/" component={Food} />
-                        <Route path="/workout" component={Workout} />
-                        <Route path="/recommendations" component={Recommendations} />
+                        <Route exact path="/"  component={Recommendations}  />
+                        <Route path="/workout"  component={Workout} />
+                        <Route path="/food" component={Food} />
                         <Route path="/history" component={History} />
                     </div>
                 </div>

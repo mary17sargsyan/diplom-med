@@ -1,6 +1,121 @@
-.formDiv{
-    width: 40%;
-    border: 2px solid #2ed3ae ;
-    height: 300px;
+.grayBack{
+    margin: auto;
+    width: 90%;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    min-height: 500px;
+    height: auto;
+
+    padding-top: 5%;
 
 }
+form{
+    width: 50%;
+    height: auto;
+    margin-left: 20%;
+}
+label{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 20px ;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #2ed3ae;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+}
+.duration input[type=number] {
+    float: left;
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+
+}
+input[type=number] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+
+}
+
+
+input[type=submit] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #2ed3ae;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #2ed3ae;
+    color: white;
+    font-size: 20px;
+}
+
+.reacommended{
+    width: 20%;
+    height: auto;
+    float: left;
+    border: 1px solid #2ed3ae;
+    border-radius: 14px;
+    margin-left: 2%;
+    margin-top: 2%;
+
+}
+
+.reacommended h1{
+
+    text-align: center;
+    font-size: 15px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
+.reacommended p{
+   text-align: center;
+}
+
+
+.all{
+    width: 57%;
+    margin: auto;
+
+}
+.helpful{
+    padding-top: 0.1%;
+    width: 50%;
+
+    height: auto;
+    font-size: 20px;
+}
+h3{
+    text-align: center;
+    font-size: 30px;
+}
+
+

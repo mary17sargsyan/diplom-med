@@ -5,7 +5,11 @@ export class TopHeader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            links: [{
+            links: [
+                {title: 'About',
+                url: "/about"
+                },
+                {
                 title:'Register',
                 url: '/register'
             },{
