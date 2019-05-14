@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './regStyle.css';
 import {TopHeader} from '../shared/top-header.component';
-
+import axios from 'axios';
 
 export class Register extends Component {
 
@@ -10,21 +10,26 @@ export class Register extends Component {
         this.state = {
             firstName: '',
             lastName: '',
-            eMail: '',
+            userName: '',
             passwordRepeat: '',
-            password: ''
+            password: '',
+            weight: '',
+            height: '',
+            selectGender: '',
+            age: '',
+            goal:''
         };
 
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
         this.handleChangeLastName = this.handleChangeLastName.bind(this);
-        this.handleChangeMail = this.handleChangeMail.bind(this);
+        this.handleChangeUserName = this.handleChangeUserName.bind(this);
         this.handleChangePassword = this.handleChangePassword.bind(this);
         this.handleChangePasswordRepeat = this.handleChangePasswordRepeat.bind(this);
-        this.handleChangeDate = this.handleChangeDate.bind(this);
+        this.handleChangeAge= this.handleChangeAge.bind(this);
         this.handleChangeSelectGender = this.handleChangeSelectGender.bind(this);
         this.handleChangeWeight = this.handleChangeWeight.bind(this);
         this.handleChangeHeight = this.handleChangeHeight.bind(this);
-        this.handleChangeAbout = this.handleChangeAbout.bind(this);
+        this.handleChangeGoal = this.handleChangeGoal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -44,11 +49,11 @@ export class Register extends Component {
         this.setState({passwordRepeat: event.target.value});
     }
 
-    handleChangeMail(event) {
-        this.setState({eMail: event.target.value});
+    handleChangeUserName(event) {
+        this.setState({userName: event.target.value});
     }
-    handleChangeDate(event) {
-        this.setState({date: event.target.value});
+    handleChangeAge(event) {
+        this.setState({age: event.target.value});
     }
     handleChangeSelectGender(event) {
         this.setState({selectGender: event.target.value});
@@ -59,24 +64,47 @@ export class Register extends Component {
     handleChangeHeight(event) {
         this.setState({height: event.target.value});
     }
-    handleChangeAbout(event) {
-        this.setState({about: event.target.value});
+    handleChangeGoal(event) {
+        this.setState({goal: event.target.value});
     }
 
     handleSubmit(event) {
-        console.log('lastName: ' + this.state.lastName);
-        console.log('firstName: ' + this.state.firstName);
-        console.log('eMail: ' + this.state.eMail);
-        console.log('password:' +this.state.password);
-        console.log('passwordRepeat:' + this.state.passwordRepeat);
-        console.log('date: ' + this.state.date);
-        console.log('gender: ' + this.state.selectGender);
-        console.log('weight: ' + this.state.weight);
-        console.log('height: ' + this.state.height);
-        console.log('about: ' + this.state.about);
-
 
         event.preventDefault();
+        let formData = new FormData();
+        formData.append('userName', this.state.userName);
+        formData.append('password', this.state.password);
+        formData.append('passwordRepeat', this.state.passwordRepeat);
+        formData.append('lastName', this.state.lastName);
+        formData.append('firstName', this.state.firstName);
+        formData.append('age', this.state.age);
+        formData.append('weight', this.state.weight);
+        formData.append('height', this.state.height);
+        formData.append('selectGender', this.state.selectGender);
+        formData.append('goal', this.state.goal);
+
+        axios({
+            method: 'post',
+            url: '/register.php',
+            data: formData,
+            config: {headers: {'Content-Type': 'multipart/form-data'}}
+        })
+            .then((response) =>{
+                console.log(response);
+                if (response.data.result === 'ok') {
+
+                        alert('ok');
+                }
+                else if(response.data.result === 'notOk') {
+                    alert('qaq');
+
+
+                }else if(response.data.result === 'error'){
+                        alert('qaqaot');
+                }
+
+            })
+
     }
 
     render() {
@@ -89,7 +117,7 @@ export class Register extends Component {
                 <br/>
                 <div className="divForRegForm">
 
-                    <form onSubmit={this.handleSubmit}>
+                    <form  action="/register.php" onSubmit={this.handleSubmit}>
                         <div className="formDiv1">
                             <label>
                                 First Name :
@@ -107,7 +135,7 @@ export class Register extends Component {
                                 E: mail :
                             </label>
                             <br/>
-                            <input name="eMail" type="text" value={this.state.eMail} onChange={this.handleChangeMail}/>
+                            <input name="userName" type="text" value={this.state.userName} onChange={this.handleChangeUserName}/>
 
                             <label>
                                 Password :
@@ -125,11 +153,11 @@ export class Register extends Component {
                         </div>
                         <div className="formDiv2">
                             <label>
-                                Date of Birth :
+                                Age:
                             </label>
                             <br/>
-                            <input name="date" type="date" min="1930-01-01" max="2010-01-01" value={this.state.date}
-                                   onChange={this.handleChangeDate}/>
+                            <input name="age" type="number"  value={this.state.age}
+                                   onChange={this.handleChangeAge}/>
                             <label>
                                 Gender :
                             </label>
@@ -152,7 +180,7 @@ export class Register extends Component {
                             <label>
                                 What's your goal ? :
                             </label>
-                            <select name="about" value={this.state.about} onChange={this.handleChangeAbout}>
+                            <select name="goal" value={this.state.goal} onChange={this.handleChangeGoal}>
                                 <option value="beHealthier">Be Healthier</option>
                                 <option value="loseWeight ">Lose Weight</option>
                                 <option value="gainWeight">Gain Weight</option>

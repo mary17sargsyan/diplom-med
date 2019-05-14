@@ -1,20 +1,27 @@
-import React, { Component } from 'react';
+
+import React, {Component} from 'react';
 
 
-import  {Index} from "./user/index.component";
+import {Home} from "./home/home.component";
+
 
 class App extends Component {
-  render() {
-    return (
-        <div>
 
 
-      <Index/>
 
-        </div>
+    render() {
 
-    );
-  }
+
+
+        return (
+            <div>
+
+                <Home/>
+
+            </div>
+
+        );
+    }
 }
 
 export default App;
