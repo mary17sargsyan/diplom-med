@@ -1,98 +1,64 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {TopHeader} from '../shared/top-header.component';
-import '../style.css';
+import './style.css';
+export class Workout extends Component {
 
-export  class Workout extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            durationMin: '',
-            durationHour: '',
-            weight: '',
-            exercise: ''
-        };
+    render()
+    {
 
-        this.handleChangeDurationMin = this.handleChangeDurationMin.bind(this);
-        this.handleChangeDurationHour = this.handleChangeDurationHour.bind(this);
-        this.handleChangeWeight = this.handleChangeWeight.bind(this);
-        this.handleChangeExercise = this.handleChangeExercise.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-        handleChangeDurationMin(event) {
-            this.setState({durationMin: event.target.value});
-        }
-        handleChangeDurationHour(event) {
-            this.setState({durationHour: event.target.value});
-        }
-
-        handleChangeWeight(event) {
-            this.setState({weight: event.target.value});
-        }
-
-        handleChangeExercise(event) {
-            this.setState({exercise: event.target.value});
-        }
+        const day1 = [
+            {work: 'Chest – Barbell Bench Press – 4 sets of 8 reps'},
+            {work: 'Back – Lat-pulldowns – 4 sets of 10 reps'},
+            {work: 'Shoulders – Seated Dumbbell Press – 4 sets of 10 reps'},
+            {work: 'Legs – Leg Extensions – 4 sets of 10 reps'},
+            {work: 'Biceps – Barbell Bbicep Curls – 3 sets of 10 reps'},
+            {work: 'Triceps – Triceps Rope Pushdowns – 3 sets of 15 reps'}
 
 
+        ];
+        const day2 = [
+            {work:'Legs – Leg Press Machine – 4 sets of 8 reps'},
+            {work:'Triceps – Overhead Bar Extensions – 3 sets of 20 reps'},
+            {work:'Biceps – EZ Bar Curls – 4 sets of 10 reps'},
+            {work:'Chest – Machine Chest Press – 4 sets of 10 reps'},
+            {work:'Back – T-Bar Row – 4 sets of 10 reps'},
+            {work:'Shoulders – Lateral Raises – 3 sets of 20 reps'}
 
-    handleSubmit(event) {
+        ];
+        const arrMeals = day1.map((work, index) => (
 
-        console.log( this.state.durationHour);
-        console.log(this.state.durationMin);
-        console.log(this.state.weight);
-        console.log(this.state.exercise);
+                <li>{work.work}</li>
+
+        ));
+        const day = day2.map((work, index) => (
+
+            <li>{work.work}</li>
+
+        ));
 
 
-        event.preventDefault();
-    }
-
-
-    render() {
         return (
+
             <div>
                 <TopHeader/>
                 <br/>
 
                 <div className="grayBack">
-                    <form onSubmit={this.handleSubmit}>
-                        <label>
-                            Your Exercise :
-                        </label>
-                        <select name="exercise" value={this.state.exercise} onChange={this.handleChangeExercise}>
-                            <option value=" "> </option>
-                            <option value="danceing">Dansing</option>
-                            <option value="walking">Walking</option>
-                            <option value="runing"> Runing</option>
-                            <option value="gym">Gym</option>
-                            <option value="yoga">Yoga</option>
-                            <option value="stretch">Body Stretch</option>
+                    <h1> The workout is choosed based on your body index</h1>
+                    <br/>
+    <div className="inLine">
+                    <ul className="reacommended1">
+                        {arrMeals}
+                    </ul>
+                    <ul className="reacommended1">
+                        {day}
+                    </ul>
 
-                        </select>
-
-                        <label>
-                            Current Weight :
-                        </label>
-                        <input name="weight" type="number" placeholder="Weight" value={this.state.weight}
-                               onChange={this.handleChangeWeight}/><br/>
-                        <label>
-                            Duration :
-                        </label>
-
-                        <div className="duration">
-                            <input name="durationtHour" type="number" placeholder="Hr(s)" value={this.state.durationHour}
-                                   onChange={this.handleChangeDurationHour}/>
-                            <input name="durationtMin" type="number" placeholder="Min(s)" value={this.state.durationMin}
-                                   onChange={this.handleChangeDurationMin}/>
-
-                        </div>
-
-                        <input type="submit" value="Add"/>
-
-
-                    </form>
-
+    </div>
                 </div>
+
             </div>
+
         );
     }
 }

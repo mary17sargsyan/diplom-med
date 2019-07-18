@@ -1,11 +1,9 @@
-
 import React, {Component} from 'react';
 import {TopHeader} from '../shared/top-header.component';
-import {FoodAnother} from './foodAnother.component';
 import '../style.css';
 import axios from 'axios';
 
-export class Food extends Component {
+export class FoodAnother extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -19,6 +17,7 @@ export class Food extends Component {
         this.handleChangeType = this.handleChangeType.bind(this);
         this.handleChangeHowMuch = this.handleChangeHowMuch.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     handleChangeTime(event) {
@@ -43,7 +42,7 @@ export class Food extends Component {
 
         axios({
             method: 'post',
-            url: '/foodSubmit.php',
+            url: '/foodSubmitAnother.php',
             data: formData,
             config: {headers: {'Content-Type': 'multipart/form-data'}}
         })
@@ -52,7 +51,7 @@ export class Food extends Component {
                     alert('ok');
                 }
                 else if(response.data.result === 'notOk') {
-                    this.setState({station:'ok'});
+                    alert('notok');
 
                 }else if(response.data.result === 'error'){
                     alert('error');
@@ -65,24 +64,24 @@ export class Food extends Component {
     }
 
     render() {
-        if (this.state.station ==='') {
+
             return (
                 <div>
                     <TopHeader/>
                     <br/>
                     <br/>
                     <div className="grayBack">
-
+                        <p> Please input your food and calorie manualy</p>
                         <br/>
                         <br/>
                         <br/>
-                        <form action="/foodSubmit.php" onSubmit={this.handleSubmit}>
+                        <form action="/foodSubmitAnother.php" onSubmit={this.handleSubmit}>
                             <label>
                                 Types of meal? :
                             </label>
 
                             <select name="exercise" value={this.state.time} onChange={this.handleChangeTime}>
-                                <option value="empty"></option>
+                                <option value="empty"> </option>
                                 <option value="breakfast">Breakfast</option>
                                 <option value="lunch">Lunch</option>
                                 <option value="dinner"> Meat and Fish</option>
@@ -98,7 +97,7 @@ export class Food extends Component {
                             <input name="type" type="text" value={this.state.type} onChange={this.handleChangeType}/>
 
                             <label>
-                                How much do you eat?
+                                How much caloria?
                             </label>
                             <input name="howMuch" type="number" placeholder="Gr" value={this.state.howMuch}
                                    onChange={this.handleChangeHowMuch}/>
@@ -111,14 +110,7 @@ export class Food extends Component {
                     </div>
                 </div>
             );
-        }else if(this.state.station==='ok'){
-            return (
-               <div>
-                   <FoodAnother/>
-               </div>
-            );
 
         }
-    }
 
 }

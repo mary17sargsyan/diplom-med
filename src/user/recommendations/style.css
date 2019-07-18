@@ -1,0 +1,50 @@
+ul{
+    float: right;
+    margin-top: 3%;
+    width: 40%;
+    height: auto;
+    font-size: 22px;
+    color: black;
+    display: inline-block;
+    margin-left: 5%;
+    text-decoration: solid  #2ed3ae ;
+}
+ul li{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-top: 1%;
+}
+
+h1{
+    text-align: center;
+}
+
+.recommended h1{
+
+    text-align: center;
+    font-size: 15px;
+
+
+}
+.recommended p{
+    text-align: center;
+}
+
+
+.all{
+    width: 80%;
+    margin: auto;
+
+}
+.helpful{
+    padding-top: 0.1%;
+    width: 50%;
+
+    height: auto;
+    font-size: 20px;
+}
+h3{
+    text-align: center;
+    font-size: 30px;
+}
+
+

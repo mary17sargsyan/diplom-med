@@ -3,46 +3,31 @@ import {TopHeader} from '../shared/top-header.component';
 import axios from 'axios';
 import './loginStyle.css';
 import {Index} from "../../user/index.component";
-
 export class Login extends Component {
-
     constructor(props) {
         super(props)
         this.state = {
             userName: '',
             password: '',
             station: 'empty'
-
         };
-
-
         this.handleChangeUserName = this.handleChangeUserName.bind(this);
         this.handleChangePassword = this.handleChangePassword.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
-
-
     handleChangePassword(event) {
         this.setState({password: event.target.value});
     }
-
     handleChangeUserName(event) {
 
         this.setState({userName: event.target.value});
-
     }
-
-
-
-
     handleSubmit(event) {
         event.preventDefault();
 
         let formData = new FormData();
         formData.append('userName', this.state.userName);
         formData.append('password', this.state.password);
-
         axios({
             method: 'post',
             url: '/login.php',
@@ -54,30 +39,22 @@ export class Login extends Component {
                 if (response.data.result === 'ok') {
 
                     this.setState({ station:'ok'});
-
+                    console.log(response);
                 }
                 else {
                     this.setState({ station:'notOk'});
-
-
                 }
 
             })
-
-
     }
-
-
     render() {
         if (this.state.station === 'empty' ) {
             return (
-
                 <div>
                     <TopHeader/>
                     <br/>
                     <br/>
                     <br/>
-
                     <div className="log">
                         <form action="/login.php" onSubmit={this.handleSubmit}>
                             <label>
@@ -94,24 +71,19 @@ export class Login extends Component {
                                    onChange={this.handleChangePassword}/>
                             <input type="submit" value="Submit"/>
                         </form>
-
                     </div>
                 </div>
-
             );
-
         } else if(this.state.station==='ok'){
             return <Index/>;
         } else if (this.state.station==='notOk') {
             return (
-
                 <div>
                     <TopHeader/>
                     <br/>
                     <br/>
-                    <Welcome name="No user found, Please regitre"/>
+                    <Welcome name="No user found, Please register"/>
                     <br/>
-
                     <div className="log">
                         <form action="/login.php" onSubmit={this.handleSubmit}>
                             <label>
@@ -131,16 +103,10 @@ export class Login extends Component {
 
                     </div>
                 </div>
-
             );
-
         }
-
-
         }
-
 }
-
 function Welcome(props) {
     return <p>Hello, {props.name}</p>;
 }

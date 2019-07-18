@@ -8,6 +8,4 @@ $tableName="user";
 $conn= mysqli_connect($serverName, $userName, $Password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-
-
 }

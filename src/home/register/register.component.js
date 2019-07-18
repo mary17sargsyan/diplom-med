@@ -17,7 +17,8 @@ export class Register extends Component {
             height: '',
             selectGender: '',
             age: '',
-            goal:''
+            goal:'',
+            kfa:''
         };
 
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
@@ -30,6 +31,7 @@ export class Register extends Component {
         this.handleChangeWeight = this.handleChangeWeight.bind(this);
         this.handleChangeHeight = this.handleChangeHeight.bind(this);
         this.handleChangeGoal = this.handleChangeGoal.bind(this);
+        this.handleChangeKfa = this.handleChangeKfa.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -67,7 +69,9 @@ export class Register extends Component {
     handleChangeGoal(event) {
         this.setState({goal: event.target.value});
     }
-
+    handleChangeKfa(event) {
+        this.setState({kfa: event.target.value});
+    }
     handleSubmit(event) {
 
         event.preventDefault();
@@ -82,6 +86,7 @@ export class Register extends Component {
         formData.append('height', this.state.height);
         formData.append('selectGender', this.state.selectGender);
         formData.append('goal', this.state.goal);
+        formData.append('kfa', this.state.kfa);
 
         axios({
             method: 'post',
@@ -93,19 +98,21 @@ export class Register extends Component {
                 console.log(response);
                 if (response.data.result === 'ok') {
 
-                        alert('ok');
+                    alert('ok');
                 }
                 else if(response.data.result === 'notOk') {
-                    alert('qaq');
+                    alert('Something went wrong.');
 
 
                 }else if(response.data.result === 'error'){
-                        alert('qaqaot');
+                    alert('Something went wrong.');
                 }
 
             })
 
     }
+
+
 
     render() {
 
@@ -162,9 +169,10 @@ export class Register extends Component {
                                 Gender :
                             </label>
                             <select name="selectGender" value={this.state.selectGender} onChange={this.handleChangeSelectGender}>
+                                <option value="empty"> </option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Fimale</option>
-    <br/>
+                                <br/>
                             </select>
 
                             <label>
@@ -181,58 +189,29 @@ export class Register extends Component {
                                 What's your goal ? :
                             </label>
                             <select name="goal" value={this.state.goal} onChange={this.handleChangeGoal}>
-                                <option value="beHealthier">Be Healthier</option>
-                                <option value="loseWeight ">Lose Weight</option>
+                                <option value="empty"> </option>
+                                <option value="beHealthier">Eat Healthy</option>
+                                <option value="loseWeight">Lose Weight</option>
                                 <option value="gainWeight">Gain Weight</option>
-
                             </select>
                             <br/>
-
+                            <label>
+                                YOUR ACTIVITY LEVEL  ? :
+                            </label>
+                            <select name="kfa" value={this.state.kfa} onChange={this.handleChangeKfa}>
+                                <option value="empty"> </option>
+                                <option value="1.2">Sedentary Lifestyle</option>
+                                <option value=" 1.375">Lightly Active Lifestyle </option>
+                                <option value="1.550">Moderately Active Lifestyle</option>
+                                <option value="1,725">Very Active Lifestyle </option>
+                                <option value="1,9">Extra Active Lifestyle </option>
+                            </select>
+                            <br/>
                             <input type="submit" value="Submit"/>
                         </div>
-
                     </form>
                 </div>
             </div>
-
         );
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

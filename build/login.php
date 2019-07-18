@@ -10,25 +10,23 @@ if($_SERVER['REQUEST_METHOD']==='POST' && !empty($_POST)) {
         if (!empty($_POST['userName']) && !empty($_POST['password'])) {
 
             $userName = mysqli_escape_string($conn, $_POST['userName']);
-            $password = mysqli_escape_string($conn, $_POST['password']);
+            $hashedPassword = hash('sha256', $_POST['password']);
 
-            $sql = "SELECT id, userName, password FROM user where userName='$userName' AND password='$password' ";
+            $sql = "SELECT id, userName, password FROM user where userName='$userName' and password='$hashedPassword'";
             $result = $conn->query($sql);
 
             if ($result->num_rows == 1) {
                 $row = $result->fetch_assoc();
+
                 $_SESSION['userId'] = $row['id'];
                 echo json_encode(['result' => 'ok']);
-            }
-            else{
-                echo json_encode(['result' => 'not_ok']);
+                exit;
+
             }
         }
     }
-
-
 }
-
+echo json_encode(['result' => 'not_ok']);
 
 
 

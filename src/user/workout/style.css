@@ -1,0 +1,18 @@
+.reacommended1{
+    width: 40%;
+    height: 250px;
+    font-size: 22px;
+    color: black;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    margin-left: 5%;
+}
+ul li{
+    margin-top: 1%;
+}
+.inLine{
+
+}
+h1{
+    text-align: center;
+}

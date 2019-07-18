@@ -1,59 +1,52 @@
-body{
+body {
     color: #2ed3ae;
 }
 
-.divForRegForm{
+.divForRegForm {
     width: 100%;
     height: auto;
 }
 
-.formDiv1{
-    margin-left: 15%;
+.formDiv1 {
+
     width: 35%;
     float: left;
 }
 
-.formDiv2{
-    margin-left: 10%;
+.formDiv2 {
+    margin-left: 5%;
     width: 35%;
     float: left;
 }
-label{
+
+label {
+    width: 100%;
     float: left;
 }
-.weightHeight{
+
+.weightHeight {
     width: 100%;
 }
 
-                form{
-                    width: 90%;
-                }
-                select{
-                    width: 100%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #2ed3ae;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                    background-color: white;
-                    color: #2ed3ae;
-                    font-size: 20px;
-                }
-                input[type=text] {
-                    width: 100%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
+form {
+    width: 90%;
+}
 
-                }
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #2ed3ae;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+    color: #2ed3ae;
+    font-size: 20px;
+}
 
-input[type=number] {
-    float: left;
-    width: 30%;
+input[type=text] {
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -61,6 +54,16 @@ input[type=number] {
     border-radius: 4px;
     box-sizing: border-box;
 
+}
+
+input[type=number] {
+    float: left;
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 
 }
 
@@ -76,7 +79,7 @@ input[type=date] {
     color: #2ed3ae;
 }
 
- input[type=password] {
+input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -85,8 +88,6 @@ input[type=date] {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
-
 
 input[type=submit] {
     width: 100%;
